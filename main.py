@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 from typing import Union
-import uvicorn
-import os
 
 app = FastAPI()
 
