@@ -8,7 +8,7 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/DaironodeDev/apis_urlsmartlink/issues)
+[![GitHub Issues](https://github.com/DaironodeDev/apis_urlsmartlink/issues)](https://github.com/DaironodeDev/apis_urlsmartlink/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/DaironodeDev/apis_urlsmartlink/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
@@ -16,7 +16,7 @@
 
 ---
 
-<p align="center"> Api from .
+<p align="center"> Api from urlsmartlink.
     <br> 
 </p>
 
@@ -89,7 +89,7 @@ Pending to make this.
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 <!-- - [MongoDB](https://www.mongodb.com/) - Database -->
-- [Express](https://www.python.org/) - Programming language
+- [Python](https://www.python.org/) - Programming language
 - [fastAPI](https://fastapi.tiangolo.com/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
