@@ -26,3 +26,32 @@ class Apis(BaseModel):
 
     class Config:
         orm_mode = True
+
+class Token(BaseModel):
+    id: int
+    id_apps: int
+    id_clientes: int
+    token_jwt: str
+    estatus: bool
+    created_at: date
+    updated_at: date
+
+    class Config:
+        orm_mode: True
+    
+class Clientes(BaseModel):
+    id: int
+    secret_key: str
+    nombre: str
+    created_at: date
+    updated_at: date
+
+    class Config:
+        orm_mode: True
+
+class Cliente_Apps(BaseModel):
+    id: int
+    id_apps: int
+    id_clientes: int
+
+

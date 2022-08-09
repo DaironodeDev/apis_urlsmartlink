@@ -21,3 +21,27 @@ class Apis(Base):
     created_at = Column(DateTime)
     updated_at = Column(DateTime)
 
+class Token(Base):
+    __tablename__ = 'token'
+    id = Column(Integer, primary_key=True, index=True)
+    id_apps = Column(Integer)
+    id_clientes = Column(Integer)
+    token_jwt = Column(String(100))
+    estatus = Column(Boolean)
+    created_at = Column(DateTime)
+    updated_at = Column(DateTime)
+
+class Clientes(Base):
+    __tablename__ = 'clientes'
+    id = Column(Integer, primary_key=True, index=True)
+    secret_key = Column(String(50))
+    nombre = Column(String(80))
+    created_at = Column(DateTime)
+    updated_at = Column(DateTime)
+
+class Cliente_Apps(Base):
+    __tablename__ = 'cliente_apps'
+    id = Column(Integer, primary_key=True, index=True)
+    id_apps = Column(Integer)
+    id_clientes = Column(Integer)
+
