@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List
 from fastapi import FastAPI
 from fastapi.params import Depends
@@ -57,17 +58,23 @@ def show_apis(db: Session = Depends(get_db)):
 
 
 @app.post('/apis/', response_model=schema.Apis, summary="Guarda id_apps, id_usuario, id_estatus, ruta, descripcion, fecha  en la tabla Apps")
-async def read_item(id_apps: int, id_usuario: int, id_status: int, ruta: str, descripcion: str = None):
+async def view(id_apps: int, id_usuario: int, id_status: bool, ruta: str, descripcion: str = None, db: Session = Depends(get_db)):
     """
         Detalles de los campos
 
         - **id**: Es autoincrement.
         - **id_apps**: Es la relación con la tabla Apps.
     """
-def create_apis(insert: schema.Apis, db: Session = Depends(get_db)):
-    apis = model.Apis(id_apps=insert.id_apps, id_usuario=insert.id_usuario,
-                      id_status=insert.id_status, ruta=insert.ruta, descripcion=insert.descripcion)
+    apis = model.Apis(id_apps=id_apps, id_usuario=id_usuario,
+                      id_status=id_status, ruta=ruta, descripcion=descripcion)
     db.add(apis)
     db.commit()
     db.refresh(apis)
     return apis
+# def create_apis(insert: schema.Apis, db: Session = Depends(get_db)):
+#     apis = model.Apis(id_apps=insert.id_apps, id_usuario=insert.id_usuario,
+#                       id_status=insert.id_status, ruta=insert.ruta, descripcion=insert.descripcion)
+#     db.add(apis)
+#     db.commit()
+#     db.refresh(apis)
+#     return apis

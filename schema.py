@@ -2,7 +2,6 @@ from datetime import date
 from typing import Optional
 from pydantic import BaseModel
 
-
 class Apps(BaseModel):
     id:Optional[int]
     id_usuario: int
@@ -13,14 +12,13 @@ class Apps(BaseModel):
     class Config:
         orm_mode = True
 
-
 class Apis(BaseModel):
-    id: int
+    id:Optional[int]
     id_apps: int
     id_usuario: int
     id_status: int
     ruta: str
-    descripcion: str
+    descripcion:Optional[str]
     created_at: date
     updated_at: date
 
@@ -28,7 +26,7 @@ class Apis(BaseModel):
         orm_mode = True
 
 class Token(BaseModel):
-    id: int
+    id:Optional[int]
     id_apps: int
     id_clientes: int
     token_jwt: str
@@ -40,7 +38,7 @@ class Token(BaseModel):
         orm_mode: True
     
 class Clientes(BaseModel):
-    id: int
+    id:Optional[int]
     secret_key: str
     nombre: str
     created_at: date
@@ -50,8 +48,11 @@ class Clientes(BaseModel):
         orm_mode: True
 
 class Cliente_Apps(BaseModel):
-    id: int
+    id:Optional[int]
     id_apps: int
     id_clientes: int
+
+    class Config:
+        orm_mode: True
 
 

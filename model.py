@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from conexion import Base
+import datetime
 
 
 class Apps(Base):
@@ -18,8 +19,8 @@ class Apis(Base):
     id_status = Column(Boolean)
     ruta = Column(String(255))
     descripcion = Column(String(255))
-    created_at = Column(DateTime)
-    updated_at = Column(DateTime)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.datetime.utcnow)
 
 class Token(Base):
     __tablename__ = 'token'
