@@ -35,3 +35,11 @@ def status():
 def show_apps(db:Session=Depends(get_db)):
     apps = db.query(model.Apps).all()
     return apps
+
+@app.post('/apps/', response_model=schema.Apps)
+def create_apps(insert:schema.Apps,db:Session=Depends(get_db)):
+    apps = model.Apps(id_usuario = insert.id_usuario, nombre=insert.nombre)
+    db.add(apps)
+    db.commit()
+    db.refresh(apps)
+    return apps
