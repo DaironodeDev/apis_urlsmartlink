@@ -22,6 +22,14 @@ class Apis(Base):
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow)
 
+class Cliente_Apps(Base):
+    __tablename__ = 'cliente_apps'
+    id = Column(Integer, primary_key=True, index=True)
+    id_apps = Column(Integer)
+    id_clientes = Column(Integer)
+    created_at = Column(DateTime)
+    updated_at = Column(DateTime)
+
 class Token(Base):
     __tablename__ = 'token'
     id = Column(Integer, primary_key=True, index=True)
@@ -40,9 +48,5 @@ class Clientes(Base):
     created_at = Column(DateTime)
     updated_at = Column(DateTime)
 
-class Cliente_Apps(Base):
-    __tablename__ = 'cliente_apps'
-    id = Column(Integer, primary_key=True, index=True)
-    id_apps = Column(Integer)
-    id_clientes = Column(Integer)
+
 
